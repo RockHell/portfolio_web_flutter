@@ -2,4 +2,10 @@
   "titleWidgets": "Widget list",
   "darkMode": "Dark mode",
   "lightMode": "Light mode",
+  "android": "Android",
+  "flutter": "Flutter",
+  "showAll": "Show all",
+  "projects": "Projects",
+  "other": "Other",
+  "design": "Design"
 }

@@ -18,7 +18,9 @@ class MainBar extends StatelessWidget {
         vertical: Paddings.of(context).padding_12,
       ),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.end,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           LargeIconButton(
             icon: Icons.design_services_outlined,

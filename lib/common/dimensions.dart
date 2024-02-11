@@ -24,13 +24,15 @@ class Dimensions {
 
   double get icon20 => [16.0, 18.0, 20.0, 20.0, 20.0, 20.0].elementAt(context.device);
 
+  double get icon40 => [32.0, 36.0, 40.0, 40.0, 40.0, 40.0].elementAt(context.device);
+
   // Cards
   static const cardOuterBorderRadius = 8.0;
   static const cardInnerBorderRadius = 6.0;
 
-  double get card2ImageSize => [50.0, 60.0, 70.0, 70.0, 70.0, 70.0].elementAt(context.device);
+  double get cardHorizontalImageSize => [50.0, 60.0, 70.0, 70.0, 70.0, 70.0].elementAt(context.device);
 
-  double get card3ImageSize => [30.0, 40.0, 50.0, 50.0, 50.0, 50.0].elementAt(context.device);
+  double get cardHorizontalSmallImageSize => [40.0, 50.0, 60.0, 60.0, 60.0, 60.0].elementAt(context.device);
 
   // Scrollbar
   static const scrollbarRadius = 10.0;

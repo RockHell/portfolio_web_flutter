@@ -57,15 +57,15 @@ class CardHorizontal extends StatelessWidget {
                           if (imagePath != null)
                             Image(
                               image: AssetImage(imagePath!),
-                              width: Dimensions.of(context).card2ImageSize,
-                              height: Dimensions.of(context).card2ImageSize,
+                              width: Dimensions.of(context).cardHorizontalImageSize,
+                              height: Dimensions.of(context).cardHorizontalImageSize,
                               fit: BoxFit.cover,
                             ),
                           if (vectorPath != null)
                             SvgPicture.asset(
                               vectorPath!,
-                              width: Dimensions.of(context).card2ImageSize,
-                              height: Dimensions.of(context).card2ImageSize,
+                              width: Dimensions.of(context).cardHorizontalImageSize,
+                              height: Dimensions.of(context).cardHorizontalImageSize,
                               fit: BoxFit.cover,
                             ),
                           Positioned.fill(

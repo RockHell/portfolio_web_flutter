@@ -13,4 +13,6 @@ class Grids {
 
   // WidgetsPage
   int get grid300Px => context.numberOf300Px;
+
+  int get grid400Px => context.numberOf400Px > 4 ? 4 : context.numberOf400Px;
 }

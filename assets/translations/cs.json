@@ -1,5 +1,11 @@
 {
   "titleWidgets": "Seznam widgetů",
   "darkMode": "Tmavý režim",
-  "lightMode": "Světlý režim"
+  "lightMode": "Světlý režim",
+  "android": "Android",
+  "flutter": "Flutter",
+  "showAll": "Zobrazit vše",
+  "projects": "Projekty",
+  "other": "Ostatní",
+  "design": "Design"
 }

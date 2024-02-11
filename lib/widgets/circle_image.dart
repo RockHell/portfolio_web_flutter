@@ -27,15 +27,15 @@ class CircleImage extends StatelessWidget {
             if (imagePath != null)
               Image(
                 image: AssetImage(imagePath!),
-                width: Dimensions.of(context).card3ImageSize,
-                height: Dimensions.of(context).card3ImageSize,
+                width: Dimensions.of(context).cardHorizontalSmallImageSize,
+                height: Dimensions.of(context).cardHorizontalSmallImageSize,
                 fit: BoxFit.cover,
               ),
             if (vectorPath != null)
               SvgPicture.asset(
                 vectorPath!,
-                width: Dimensions.of(context).card3ImageSize,
-                height: Dimensions.of(context).card3ImageSize,
+                width: Dimensions.of(context).cardHorizontalSmallImageSize,
+                height: Dimensions.of(context).cardHorizontalSmallImageSize,
                 fit: BoxFit.cover,
               ),
             Positioned.fill(

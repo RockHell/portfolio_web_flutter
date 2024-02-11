@@ -38,71 +38,85 @@ class CardHorizontalSmall extends StatelessWidget {
               borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
               color: AppColors.cardOuterBackground,
             ),
-            padding: EdgeInsets.all(Paddings.of(context).padding_16),
             child: Row(
               mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 if (imagePath != null || vectorPath != null)
-                  Padding(
-                    padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
-                    child: ClipOval(
-                      child: Stack(
-                        children: [
-                          if (imagePath != null)
-                            Image(
-                              image: AssetImage(imagePath!),
-                              width: Dimensions.of(context).card3ImageSize,
-                              height: Dimensions.of(context).card3ImageSize,
-                              fit: BoxFit.cover,
-                            ),
-                          if (vectorPath != null)
-                            SvgPicture.asset(
-                              vectorPath!,
-                              width: Dimensions.of(context).card3ImageSize,
-                              height: Dimensions.of(context).card3ImageSize,
-                              fit: BoxFit.cover,
-                            ),
-                          Positioned.fill(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.bottomLeft,
-                                  end: Alignment.topRight,
-                                  colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0)],
-                                ),
+                  ClipRRect(
+                    borderRadius: const BorderRadius.only(
+                      topLeft: Radius.circular(Dimensions.cardOuterBorderRadius),
+                      bottomLeft: Radius.circular(Dimensions.cardOuterBorderRadius),
+                    ),
+                    child: Stack(
+                      children: [
+                        if (imagePath != null)
+                          Image(
+                            image: AssetImage(imagePath!),
+                            width: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            fit: BoxFit.cover,
+                          ),
+                        if (vectorPath != null)
+                          SvgPicture.asset(
+                            vectorPath!,
+                            width: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            fit: BoxFit.cover,
+                          ),
+                        Positioned.fill(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.bottomLeft,
+                                end: Alignment.topRight,
+                                colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0)],
                               ),
                             ),
                           ),
-                          Positioned.fill(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
-                                  colors: [Colors.black.withOpacity(0.1), Colors.black.withOpacity(0)],
-                                ),
+                        ),
+                        Positioned.fill(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              gradient: LinearGradient(
+                                begin: Alignment.topRight,
+                                end: Alignment.bottomLeft,
+                                colors: [Colors.black.withOpacity(0.1), Colors.black.withOpacity(0)],
                               ),
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
                   ),
                 Expanded(
-                  child: AppText(
-                    title,
-                    fontWeight: FontWeight.bold,
-                    textSize: Dimensions.of(context).text14,
-                    padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                  child: Container(
+                    height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                    padding: EdgeInsets.only(left: Paddings.of(context).padding_16),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        AppText(
+                          title,
+                          fontWeight: FontWeight.bold,
+                          textSize: Dimensions.of(context).text14,
+                          padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                          textOverflow: TextOverflow.ellipsis,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 if (onTap != null)
-                  Icon(
-                    Icons.arrow_forward,
-                    color: AppColors.iconColor,
-                    size: Dimensions.of(context).icon20,
+                  Padding(
+                    padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: AppColors.iconColor,
+                      size: Dimensions.of(context).icon20,
+                    ),
                   ),
               ],
             ),

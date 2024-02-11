@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/paddings.dart';
+import 'package:my_portfolio/pages/home_page/widgets/home_page_layout.dart';
 import 'package:my_portfolio/pages/home_page/widgets/main_bar.dart';
 import 'package:my_portfolio/widgets/background.dart';
 
@@ -24,17 +25,12 @@ class _HomePageState extends State<HomePage> {
               Expanded(
                 child: SingleChildScrollView(
                   child: Padding(
-                    padding: EdgeInsets.fromLTRB(
-                      Paddings.of(context).padding_48,
-                      0.0,
-                      Paddings.of(context).padding_48,
-                      Paddings.of(context).padding_48,
+                    padding: EdgeInsets.symmetric(
+                      horizontal: Paddings.of(context).padding_48,
                     ),
-                    child: Center(
-                      child: Container(
-                        width: double.infinity,
-                        // TODO Children
-                      ),
+                    child: const SizedBox(
+                      width: double.infinity,
+                      child: HomePageLayout(),
                     ),
                   ),
                 ),

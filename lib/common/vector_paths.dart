@@ -1,4 +1,4 @@
-class AppVectorAssets {
+class VectorPaths {
   // Vectors
   static const linkedIn = 'assets/vectors/linkedin.svg';
   static const github = 'assets/vectors/github.svg';

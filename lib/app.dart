@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/app_colors.dart';
-import 'package:my_portfolio/common/constants.dart';
-import 'package:my_portfolio/pages/home_page.dart';
+import 'package:my_portfolio/common/r.dart';
+import 'package:my_portfolio/pages/widgets_page/widgets_page.dart';
 
 class App extends StatelessWidget {
   const App({super.key});
@@ -9,12 +9,13 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: Constants.appName,
+      title: R.appName,
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.seedColor),
         useMaterial3: true,
       ),
-      home: const HomePage(),
+      // TODO Change to HomePage()
+      home: const WidgetsPage(),
       debugShowCheckedModeBanner: false,
     );
   }

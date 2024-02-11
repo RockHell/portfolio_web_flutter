@@ -11,18 +11,20 @@ class Card3 extends StatelessWidget {
     this.imagePath,
     this.vectorPath,
     required this.title,
-    required this.onTap,
+    this.onTap,
+    this.margin = EdgeInsets.zero,
   });
 
   final String? imagePath;
   final String? vectorPath;
   final String title;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
+  final EdgeInsetsGeometry margin;
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
+    return Padding(
+      padding: margin,
       child: Material(
         color: AppColors.transparent,
         child: InkWell(
@@ -96,11 +98,12 @@ class Card3 extends StatelessWidget {
                     padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
                   ),
                 ),
-                Icon(
-                  Icons.arrow_forward,
-                  color: AppColors.header,
-                  size: Dimensions.of(context).icon20,
-                ),
+                if (onTap != null)
+                  Icon(
+                    Icons.arrow_forward,
+                    color: AppColors.header,
+                    size: Dimensions.of(context).icon20,
+                  ),
               ],
             ),
           ),

@@ -19,6 +19,8 @@ extension BuildContextEntension<T> on BuildContext {
 
   int get device => getScreenSize(width);
 
+  int get numberOf300Px => width ~/ 300 > 0 ? width ~/ 300 : 1;
+
   double get width => MediaQuery.of(this).size.width;
 
   double get height => MediaQuery.of(this).size.height;

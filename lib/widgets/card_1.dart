@@ -12,19 +12,21 @@ class Card1 extends StatelessWidget {
     this.vectorPath,
     required this.title,
     required this.description,
-    required this.onTap,
+    this.onTap,
+    this.margin = EdgeInsets.zero,
   });
 
   final String? imagePath;
   final String? vectorPath;
   final String title;
   final String description;
-  final GestureTapCallback onTap;
+  final GestureTapCallback? onTap;
+  final EdgeInsetsGeometry margin;
 
   @override
   Widget build(BuildContext context) {
-    return MouseRegion(
-      cursor: SystemMouseCursors.click,
+    return Padding(
+      padding: margin,
       child: Material(
         color: AppColors.transparent,
         child: InkWell(
@@ -34,6 +36,7 @@ class Card1 extends StatelessWidget {
           hoverColor: AppColors.selectionWhiteBackground,
           onTap: onTap,
           child: Container(
+            width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
               color: AppColors.cardOuterBackground,
@@ -106,14 +109,15 @@ class Card1 extends StatelessWidget {
                     bottom: Paddings.of(context).padding_12,
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomRight,
-                  child: Icon(
-                    Icons.arrow_forward,
-                    color: AppColors.header,
-                    size: Dimensions.of(context).icon20,
+                if (onTap != null)
+                  Align(
+                    alignment: Alignment.bottomRight,
+                    child: Icon(
+                      Icons.arrow_forward,
+                      color: AppColors.header,
+                      size: Dimensions.of(context).icon20,
+                    ),
                   ),
-                ),
               ],
             ),
           ),

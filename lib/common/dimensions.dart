@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/screen_size_handler.dart';
+import 'package:my_portfolio/utils/screen_size_handler.dart';
 
 class Dimensions {
   final BuildContext context;

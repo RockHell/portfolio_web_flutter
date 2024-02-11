@@ -19,14 +19,11 @@ class _HomePageState extends State<HomePage> {
         children: [
           const Background(),
           SingleChildScrollView(
-            child: Padding(
-              padding: EdgeInsets.all(Paddings.of(context).mainBackgroundPadding),
-              child: StaggeredGrid.count(
-                crossAxisCount: Grids.of(context).homepageColumns,
-                mainAxisSpacing: Paddings.of(context).padding_16,
-                crossAxisSpacing: Paddings.of(context).padding_16,
-                children: const [],
-              ),
+            child: StaggeredGrid.count(
+              crossAxisCount: Grids.of(context).homepageColumns,
+              mainAxisSpacing: Paddings.of(context).padding_16,
+              crossAxisSpacing: Paddings.of(context).padding_16,
+              children: const [],
             ),
           ),
         ],

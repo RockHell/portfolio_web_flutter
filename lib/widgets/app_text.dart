@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/app_colors.dart';
-import 'package:my_portfolio/common/constants.dart';
+import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/common/dimensions.dart';
 
 class AppText extends StatelessWidget {
@@ -15,7 +15,6 @@ class AppText extends StatelessWidget {
     this.padding,
     this.maxLines,
     this.textOverflow,
-    this.centerText,
     this.textLineHeight = 1.25,
   }) : super(key: key);
 
@@ -30,14 +29,9 @@ class AppText extends StatelessWidget {
   final TextOverflow? textOverflow;
   final double textLineHeight;
 
-  /// [centerText] - Uses Center widget to position TextS widget in the center of available width
-  ///
-  /// default/null => false
-  final bool? centerText;
-
   @override
   Widget build(BuildContext context) {
-    Widget textWidget = Padding(
+    return Padding(
       padding: padding ?? EdgeInsets.zero,
       child: Text(
         text,
@@ -47,18 +41,12 @@ class AppText extends StatelessWidget {
         style: TextStyle(
           height: textLineHeight,
           color: textColor,
-          fontFamily: Constants.fontFamily,
+          fontFamily: R.fontFamily,
           fontSize: textSize ?? Dimensions.of(context).text14,
           fontWeight: fontWeight,
           fontStyle: fontStyle,
         ),
       ),
     );
-
-    return (centerText ?? false)
-        ? Center(
-            child: textWidget,
-          )
-        : textWidget;
   }
 }

@@ -5,8 +5,8 @@ import 'package:my_portfolio/common/dimensions.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/widgets/app_text.dart';
 
-class Card1 extends StatelessWidget {
-  const Card1({
+class CardVertical extends StatelessWidget {
+  const CardVertical({
     super.key,
     this.imagePath,
     this.vectorPath,
@@ -114,7 +114,7 @@ class Card1 extends StatelessWidget {
                     alignment: Alignment.bottomRight,
                     child: Icon(
                       Icons.arrow_forward,
-                      color: AppColors.header,
+                      color: AppColors.iconColor,
                       size: Dimensions.of(context).icon20,
                     ),
                   ),

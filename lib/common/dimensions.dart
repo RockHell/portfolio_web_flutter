@@ -9,6 +9,8 @@ class Dimensions {
   static Dimensions of(BuildContext context) => Dimensions._(context);
 
   // Text
+  double get text20 => [18.0, 19.0, 20.0, 20.0, 20.0, 20.0].elementAt(context.device);
+
   double get text18 => [16.0, 17.0, 18.0, 18.0, 18.0, 18.0].elementAt(context.device);
 
   double get text16 => [14.0, 15.0, 16.0, 16.0, 16.0, 16.0].elementAt(context.device);
@@ -18,6 +20,8 @@ class Dimensions {
   double get text12 => [10.0, 11.0, 12.0, 12.0, 12.0, 12.0].elementAt(context.device);
 
   // Icons
+  double get icon24 => [20.0, 22.0, 24.0, 24.0, 24.0, 24.0].elementAt(context.device);
+
   double get icon20 => [16.0, 18.0, 20.0, 20.0, 20.0, 20.0].elementAt(context.device);
 
   // Cards
@@ -25,6 +29,7 @@ class Dimensions {
   static const cardInnerBorderRadius = 6.0;
 
   double get card2ImageSize => [50.0, 60.0, 70.0, 70.0, 70.0, 70.0].elementAt(context.device);
+
   double get card3ImageSize => [30.0, 40.0, 50.0, 50.0, 50.0, 50.0].elementAt(context.device);
 
   // Scrollbar

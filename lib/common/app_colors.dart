@@ -21,4 +21,7 @@ class AppColors {
 
   // Cards
   static const cardOuterBackground = Color(0x40FFFFFF);
+
+  // Icons
+  static const iconColor = Color(0xFF202020);
 }

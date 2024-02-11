@@ -21,6 +21,8 @@ extension BuildContextEntension<T> on BuildContext {
 
   int get numberOf300Px => width ~/ 300 > 0 ? width ~/ 300 : 1;
 
+  int get numberOf500Px => width ~/ 500 > 0 ? width ~/ 500 : 1;
+
   double get width => MediaQuery.of(this).size.width;
 
   double get height => MediaQuery.of(this).size.height;

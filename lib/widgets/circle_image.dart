@@ -21,38 +21,35 @@ class CircleImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: margin,
-      child: MouseRegion(
-        cursor: SystemMouseCursors.click,
-        child: ClipOval(
-          child: Stack(
-            children: [
-              if (imagePath != null)
-                Image(
-                  image: AssetImage(imagePath!),
-                  width: Dimensions.of(context).card3ImageSize,
-                  height: Dimensions.of(context).card3ImageSize,
-                  fit: BoxFit.cover,
-                ),
-              if (vectorPath != null)
-                SvgPicture.asset(
-                  vectorPath!,
-                  width: Dimensions.of(context).card3ImageSize,
-                  height: Dimensions.of(context).card3ImageSize,
-                  fit: BoxFit.cover,
-                ),
-              Positioned.fill(
-                child: Material(
-                  color: AppColors.transparent,
-                  child: InkWell(
-                    splashColor: AppColors.selectionBlackBackground,
-                    highlightColor: AppColors.selectionBlackBackground,
-                    hoverColor: AppColors.selectionBlackBackground,
-                    onTap: onTap,
-                  ),
+      child: ClipOval(
+        child: Stack(
+          children: [
+            if (imagePath != null)
+              Image(
+                image: AssetImage(imagePath!),
+                width: Dimensions.of(context).card3ImageSize,
+                height: Dimensions.of(context).card3ImageSize,
+                fit: BoxFit.cover,
+              ),
+            if (vectorPath != null)
+              SvgPicture.asset(
+                vectorPath!,
+                width: Dimensions.of(context).card3ImageSize,
+                height: Dimensions.of(context).card3ImageSize,
+                fit: BoxFit.cover,
+              ),
+            Positioned.fill(
+              child: Material(
+                color: AppColors.transparent,
+                child: InkWell(
+                  splashColor: AppColors.selectionBlackBackground,
+                  highlightColor: AppColors.selectionBlackBackground,
+                  hoverColor: AppColors.selectionBlackBackground,
+                  onTap: onTap,
                 ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

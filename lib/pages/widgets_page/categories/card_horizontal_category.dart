@@ -3,23 +3,15 @@ import 'package:my_portfolio/common/image_paths.dart';
 import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/pages/widgets_page/widgets/widget_label.dart';
-import 'package:my_portfolio/widgets/card_2.dart';
+import 'package:my_portfolio/widgets/card_horizontal.dart';
 
-class Card2Category extends StatelessWidget {
-  const Card2Category({
-    super.key,
-  });
+class CardHorizontalCategory {
+  final String label = 'CardHorizontal';
 
-  final String label = 'Card2';
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+  List<Widget> get widgets => [
         WidgetLabel(
           label: label,
-          child: Card2(
+          child: CardHorizontal(
             imagePath: ImagePaths.myBackground,
             title: R.dummyTitle,
             description: R.dummyDescription,
@@ -28,7 +20,7 @@ class Card2Category extends StatelessWidget {
         ),
         WidgetLabel(
           label: label,
-          child: Card2(
+          child: CardHorizontal(
             vectorPath: VectorPaths.svatkyApp,
             title: R.dummyTitleLong,
             description: R.dummyDescription,
@@ -37,7 +29,7 @@ class Card2Category extends StatelessWidget {
         ),
         WidgetLabel(
           label: label,
-          child: Card2(
+          child: CardHorizontal(
             title: R.dummyTitle,
             description: R.dummyDescription,
             onTap: () {},
@@ -45,12 +37,10 @@ class Card2Category extends StatelessWidget {
         ),
         WidgetLabel(
           label: label,
-          child: const Card2(
+          child: const CardHorizontal(
             title: R.dummyTitle,
             description: R.dummyDescription,
           ),
         ),
-      ],
-    );
-  }
+      ];
 }

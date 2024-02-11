@@ -3,54 +3,40 @@ import 'package:my_portfolio/common/image_paths.dart';
 import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/pages/widgets_page/widgets/widget_label.dart';
-import 'package:my_portfolio/widgets/card_1.dart';
+import 'package:my_portfolio/widgets/card_horizontal_small.dart';
 
-class Card1Category extends StatelessWidget {
-  const Card1Category({
-    super.key,
-  });
+class CardHorizontalSmallCategory {
+  final String label = 'CardHorizontalSmall';
 
-  final String label = 'Card1';
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+  List<Widget> get widgets => [
         WidgetLabel(
           label: label,
-          child: Card1(
+          child: CardHorizontalSmall(
             imagePath: ImagePaths.myBackground,
             title: R.dummyTitle,
-            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: Card1(
+          child: CardHorizontalSmall(
             vectorPath: VectorPaths.svatkyApp,
             title: R.dummyTitleLong,
-            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: Card1(
+          child: CardHorizontalSmall(
             title: R.dummyTitle,
-            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: const Card1(
+          child: const CardHorizontalSmall(
             title: R.dummyTitle,
-            description: R.dummyDescription,
           ),
         ),
-      ],
-    );
-  }
+      ];
 }

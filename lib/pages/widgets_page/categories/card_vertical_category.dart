@@ -3,50 +3,44 @@ import 'package:my_portfolio/common/image_paths.dart';
 import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/pages/widgets_page/widgets/widget_label.dart';
-import 'package:my_portfolio/widgets/card_3.dart';
+import 'package:my_portfolio/widgets/card_vertical.dart';
 
-class Card3Category extends StatelessWidget {
-  const Card3Category({
-    super.key,
-  });
+class CardVerticalCategory {
+  final String label = 'CardVertical';
 
-  final String label = 'Card3';
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
+  List<Widget> get widgets => [
         WidgetLabel(
           label: label,
-          child: Card3(
+          child: CardVertical(
             imagePath: ImagePaths.myBackground,
             title: R.dummyTitle,
+            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: Card3(
+          child: CardVertical(
             vectorPath: VectorPaths.svatkyApp,
             title: R.dummyTitleLong,
+            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: Card3(
+          child: CardVertical(
             title: R.dummyTitle,
+            description: R.dummyDescription,
             onTap: () {},
           ),
         ),
         WidgetLabel(
           label: label,
-          child: const Card3(
+          child: const CardVertical(
             title: R.dummyTitle,
+            description: R.dummyDescription,
           ),
         ),
-      ],
-    );
-  }
+      ];
 }

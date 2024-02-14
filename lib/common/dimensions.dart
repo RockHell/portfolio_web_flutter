@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/screen_size_handler.dart';
 
 class Dimensions {
+  Dimensions(this.context);
+
   final BuildContext context;
-
-  Dimensions._(this.context);
-
-  static Dimensions of(BuildContext context) => Dimensions._(context);
 
   // Text
   double get text20 => [18.0, 19.0, 20.0, 20.0, 20.0, 20.0].elementAt(context.device);

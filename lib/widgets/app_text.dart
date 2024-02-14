@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/app_colors.dart';
-import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/common/dimensions.dart';
+import 'package:my_portfolio/common/r.dart';
 
 class AppText extends StatelessWidget {
   const AppText(
     this.text, {
-    Key? key,
+    super.key,
     this.textColor = AppColors.header,
     this.textSize,
     this.fontStyle = FontStyle.normal,
@@ -16,7 +16,7 @@ class AppText extends StatelessWidget {
     this.maxLines,
     this.textOverflow,
     this.textLineHeight = 1.25,
-  }) : super(key: key);
+  });
 
   final String text;
   final Color textColor;
@@ -42,7 +42,7 @@ class AppText extends StatelessWidget {
           height: textLineHeight,
           color: textColor,
           fontFamily: R.fontFamily,
-          fontSize: textSize ?? Dimensions.of(context).text14,
+          fontSize: textSize ?? Dimensions(context).text14,
           fontWeight: fontWeight,
           fontStyle: fontStyle,
         ),

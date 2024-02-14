@@ -6,9 +6,9 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class WidgetLabel extends StatelessWidget {
   const WidgetLabel({
-    super.key,
     required this.label,
     required this.child,
+    super.key,
   });
 
   final String label;
@@ -20,17 +20,16 @@ class WidgetLabel extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
-          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Icon(
               Icons.arrow_right,
               color: AppColors.iconColor,
-              size: Dimensions.of(context).icon20,
+              size: Dimensions(context).icon20,
             ),
             Flexible(
               child: AppText(
                 label,
-                textSize: Dimensions.of(context).text16,
+                textSize: Dimensions(context).text16,
                 fontWeight: FontWeight.bold,
               ),
             ),
@@ -38,8 +37,8 @@ class WidgetLabel extends StatelessWidget {
         ),
         Padding(
           padding: EdgeInsets.only(
-            top: Paddings.of(context).padding_8,
-            bottom: Paddings.of(context).padding_24,
+            top: Paddings(context).padding_8,
+            bottom: Paddings(context).padding_72,
           ),
           child: child,
         ),

@@ -5,9 +5,9 @@ import 'package:my_portfolio/common/paddings.dart';
 
 class LargeIconButton extends StatelessWidget {
   const LargeIconButton({
-    super.key,
     required this.icon,
     required this.tooltip,
+    super.key,
     this.onTap,
     this.margin = EdgeInsets.zero,
   });
@@ -32,13 +32,13 @@ class LargeIconButton extends StatelessWidget {
               hoverColor: AppColors.selectionWhiteBackground,
               onTap: onTap,
               child: Container(
-                margin: EdgeInsets.all(Paddings.of(context).padding_16),
+                margin: EdgeInsets.all(Paddings(context).padding_16),
                 child: Tooltip(
                   message: tooltip,
                   child: Icon(
                     icon,
                     color: AppColors.iconColor,
-                    size: Dimensions.of(context).icon24,
+                    size: Dimensions(context).icon24,
                   ),
                 ),
               ),

@@ -7,21 +7,25 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class CardHorizontal extends StatelessWidget {
   const CardHorizontal({
-    super.key,
-    this.imagePath,
-    this.vectorPath,
     required this.title,
     required this.description,
+    super.key,
+    this.backgroundColor = AppColors.cardOuterBackground,
+    this.imagePath,
+    this.vectorPath,
     this.onTap,
     this.margin = EdgeInsets.zero,
+    this.borderRadius,
   });
 
   final String? imagePath;
   final String? vectorPath;
   final String title;
   final String description;
+  final Color backgroundColor;
   final GestureTapCallback? onTap;
   final EdgeInsetsGeometry margin;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class CardHorizontal extends StatelessWidget {
       child: Material(
         color: AppColors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+          borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
           splashColor: AppColors.selectionWhiteBackground,
           highlightColor: AppColors.selectionWhiteBackground,
           hoverColor: AppColors.selectionWhiteBackground,
@@ -38,18 +42,16 @@ class CardHorizontal extends StatelessWidget {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
-              color: AppColors.cardOuterBackground,
+              borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+              color: backgroundColor,
             ),
-            padding: EdgeInsets.all(Paddings.of(context).padding_16),
+            padding: EdgeInsets.all(Paddings(context).padding_16),
             child: Row(
-              mainAxisSize: MainAxisSize.max,
               crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 if (imagePath != null || vectorPath != null)
                   Padding(
-                    padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                    padding: EdgeInsets.only(right: Paddings(context).padding_16),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.cardInnerBorderRadius),
                       child: Stack(
@@ -57,15 +59,15 @@ class CardHorizontal extends StatelessWidget {
                           if (imagePath != null)
                             Image(
                               image: AssetImage(imagePath!),
-                              width: Dimensions.of(context).cardHorizontalImageSize,
-                              height: Dimensions.of(context).cardHorizontalImageSize,
+                              width: Dimensions(context).cardHorizontalImageSize,
+                              height: Dimensions(context).cardHorizontalImageSize,
                               fit: BoxFit.cover,
                             ),
                           if (vectorPath != null)
                             SvgPicture.asset(
                               vectorPath!,
-                              width: Dimensions.of(context).cardHorizontalImageSize,
-                              height: Dimensions.of(context).cardHorizontalImageSize,
+                              width: Dimensions(context).cardHorizontalImageSize,
+                              height: Dimensions(context).cardHorizontalImageSize,
                               fit: BoxFit.cover,
                             ),
                           Positioned.fill(
@@ -101,26 +103,26 @@ class CardHorizontal extends StatelessWidget {
                       AppText(
                         title,
                         fontWeight: FontWeight.bold,
-                        textSize: Dimensions.of(context).text14,
+                        textSize: Dimensions(context).text14,
                       ),
                       AppText(
                         description,
-                        textSize: Dimensions.of(context).text12,
+                        textSize: Dimensions(context).text12,
                         textColor: AppColors.paragraph,
                         padding: EdgeInsets.only(
-                          top: Paddings.of(context).padding_12,
-                          bottom: Paddings.of(context).padding_12,
+                          top: Paddings(context).padding_12,
+                          bottom: Paddings(context).padding_12,
                         ),
                       ),
                       if (onTap != null)
-                      Align(
-                        alignment: Alignment.bottomRight,
-                        child: Icon(
-                          Icons.arrow_forward,
-                          color: AppColors.iconColor,
-                          size: Dimensions.of(context).icon20,
+                        Align(
+                          alignment: Alignment.bottomRight,
+                          child: Icon(
+                            Icons.arrow_forward,
+                            color: AppColors.iconColor,
+                            size: Dimensions(context).icon20,
+                          ),
                         ),
-                      ),
                     ],
                   ),
                 ),

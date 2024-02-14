@@ -5,10 +5,10 @@ import 'package:my_portfolio/common/dimensions.dart';
 
 class CircleImage extends StatelessWidget {
   const CircleImage({
+    required this.onTap,
     super.key,
     this.imagePath,
     this.vectorPath,
-    required this.onTap,
     this.margin = EdgeInsets.zero,
   });
 
@@ -27,15 +27,15 @@ class CircleImage extends StatelessWidget {
             if (imagePath != null)
               Image(
                 image: AssetImage(imagePath!),
-                width: Dimensions.of(context).cardHorizontalSmallImageSize,
-                height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                width: Dimensions(context).cardHorizontalSmallImageSize,
+                height: Dimensions(context).cardHorizontalSmallImageSize,
                 fit: BoxFit.cover,
               ),
             if (vectorPath != null)
               SvgPicture.asset(
                 vectorPath!,
-                width: Dimensions.of(context).cardHorizontalSmallImageSize,
-                height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                width: Dimensions(context).cardHorizontalSmallImageSize,
+                height: Dimensions(context).cardHorizontalSmallImageSize,
                 fit: BoxFit.cover,
               ),
             Positioned.fill(

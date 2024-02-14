@@ -6,8 +6,8 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class TopBar extends StatelessWidget {
   const TopBar({
-    super.key,
     required this.title,
+    super.key,
     this.onTap,
     this.margin = EdgeInsets.zero,
   });
@@ -22,12 +22,10 @@ class TopBar extends StatelessWidget {
       padding: margin,
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (onTap != null)
             Padding(
-              padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+              padding: EdgeInsets.only(right: Paddings(context).padding_16),
               child: Material(
                 color: AppColors.transparent,
                 child: InkWell(
@@ -37,13 +35,13 @@ class TopBar extends StatelessWidget {
                   hoverColor: AppColors.selectionWhiteBackground,
                   onTap: onTap,
                   child: Padding(
-                    padding: EdgeInsets.all(Paddings.of(context).padding_16),
+                    padding: EdgeInsets.all(Paddings(context).padding_16),
                     child: Align(
                       alignment: Alignment.centerLeft,
                       child: Icon(
                         Icons.arrow_back,
                         color: AppColors.iconColor,
-                        size: Dimensions.of(context).icon24,
+                        size: Dimensions(context).icon24,
                       ),
                     ),
                   ),
@@ -54,7 +52,7 @@ class TopBar extends StatelessWidget {
             child: AppText(
               title,
               fontWeight: FontWeight.bold,
-              textSize: Dimensions.of(context).text20,
+              textSize: Dimensions(context).text20,
             ),
           ),
         ],

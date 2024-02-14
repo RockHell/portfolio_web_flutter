@@ -7,8 +7,8 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class TitleClickable extends StatelessWidget {
   const TitleClickable({
-    super.key,
     required this.title,
+    super.key,
     this.vectorPath,
     this.rightText,
     this.onTap,
@@ -26,20 +26,14 @@ class TitleClickable extends StatelessWidget {
     return Padding(
       padding: margin,
       child: Row(
-        mainAxisSize: MainAxisSize.max,
-        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (vectorPath != null)
             Padding(
-              padding: EdgeInsets.only(
-                left: Paddings.of(context).padding_16,
-                top: Paddings.of(context).padding_8,
-                bottom: Paddings.of(context).padding_8,
-              ),
+              padding: EdgeInsets.only(right: Paddings(context).padding_4),
               child: SvgPicture.asset(
                 vectorPath!,
-                width: Dimensions.of(context).icon40,
-                height: Dimensions.of(context).icon40,
+                width: Dimensions(context).icon40,
+                height: Dimensions(context).icon40,
                 fit: BoxFit.cover,
               ),
             ),
@@ -47,27 +41,27 @@ class TitleClickable extends StatelessWidget {
             child: AppText(
               title,
               fontWeight: FontWeight.bold,
-              textSize: Dimensions.of(context).text18,
-              padding: vectorPath != null
-                  ? EdgeInsets.all(Paddings.of(context).padding_4)
-                  : EdgeInsets.all(Paddings.of(context).padding_16),
+              textSize: Dimensions(context).text18,
             ),
           ),
           if (rightText != null && onTap != null)
-            Material(
-              color: AppColors.transparent,
-              child: InkWell(
-                borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
-                splashColor: AppColors.selectionWhiteBackground,
-                highlightColor: AppColors.selectionWhiteBackground,
-                hoverColor: AppColors.selectionWhiteBackground,
-                onTap: onTap,
-                child: Container(
-                  padding: EdgeInsets.all(Paddings.of(context).padding_16),
-                  child: AppText(
-                    rightText!,
-                    fontWeight: FontWeight.w500,
-                    textSize: Dimensions.of(context).text14,
+            Padding(
+              padding: EdgeInsets.only(left: Paddings(context).padding_16),
+              child: Material(
+                color: AppColors.transparent,
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+                  splashColor: AppColors.selectionWhiteBackground,
+                  highlightColor: AppColors.selectionWhiteBackground,
+                  hoverColor: AppColors.selectionWhiteBackground,
+                  onTap: onTap,
+                  child: Container(
+                    padding: EdgeInsets.all(Paddings(context).padding_16),
+                    child: AppText(
+                      rightText!,
+                      fontWeight: FontWeight.w500,
+                      textSize: Dimensions(context).text14,
+                    ),
                   ),
                 ),
               ),

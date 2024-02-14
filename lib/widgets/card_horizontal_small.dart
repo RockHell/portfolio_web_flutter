@@ -7,19 +7,23 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class CardHorizontalSmall extends StatelessWidget {
   const CardHorizontalSmall({
+    required this.title,
     super.key,
     this.imagePath,
     this.vectorPath,
-    required this.title,
+    this.backgroundColor = AppColors.cardOuterBackground,
     this.onTap,
     this.margin = EdgeInsets.zero,
+    this.borderRadius,
   });
 
   final String? imagePath;
   final String? vectorPath;
   final String title;
+  final Color backgroundColor;
   final GestureTapCallback? onTap;
   final EdgeInsetsGeometry margin;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +32,17 @@ class CardHorizontalSmall extends StatelessWidget {
       child: Material(
         color: AppColors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+          borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
           splashColor: AppColors.selectionWhiteBackground,
           highlightColor: AppColors.selectionWhiteBackground,
           hoverColor: AppColors.selectionWhiteBackground,
           onTap: onTap,
-          child: Container(
+          child: DecoratedBox(
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
-              color: AppColors.cardOuterBackground,
+              borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+              color: backgroundColor,
             ),
             child: Row(
-              mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 if (imagePath != null || vectorPath != null)
                   ClipRRect(
@@ -54,15 +55,15 @@ class CardHorizontalSmall extends StatelessWidget {
                         if (imagePath != null)
                           Image(
                             image: AssetImage(imagePath!),
-                            width: Dimensions.of(context).cardHorizontalSmallImageSize,
-                            height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            width: Dimensions(context).cardHorizontalSmallImageSize,
+                            height: Dimensions(context).cardHorizontalSmallImageSize,
                             fit: BoxFit.cover,
                           ),
                         if (vectorPath != null)
                           SvgPicture.asset(
                             vectorPath!,
-                            width: Dimensions.of(context).cardHorizontalSmallImageSize,
-                            height: Dimensions.of(context).cardHorizontalSmallImageSize,
+                            width: Dimensions(context).cardHorizontalSmallImageSize,
+                            height: Dimensions(context).cardHorizontalSmallImageSize,
                             fit: BoxFit.cover,
                           ),
                         Positioned.fill(
@@ -92,8 +93,8 @@ class CardHorizontalSmall extends StatelessWidget {
                   ),
                 Expanded(
                   child: Container(
-                    height: Dimensions.of(context).cardHorizontalSmallImageSize,
-                    padding: EdgeInsets.only(left: Paddings.of(context).padding_16),
+                    height: Dimensions(context).cardHorizontalSmallImageSize,
+                    padding: EdgeInsets.only(left: Paddings(context).padding_16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.center,
@@ -101,8 +102,8 @@ class CardHorizontalSmall extends StatelessWidget {
                         AppText(
                           title,
                           fontWeight: FontWeight.bold,
-                          textSize: Dimensions.of(context).text14,
-                          padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                          textSize: Dimensions(context).text14,
+                          padding: EdgeInsets.only(right: Paddings(context).padding_16),
                           textOverflow: TextOverflow.ellipsis,
                         ),
                       ],
@@ -111,11 +112,11 @@ class CardHorizontalSmall extends StatelessWidget {
                 ),
                 if (onTap != null)
                   Padding(
-                    padding: EdgeInsets.only(right: Paddings.of(context).padding_16),
+                    padding: EdgeInsets.only(right: Paddings(context).padding_16),
                     child: Icon(
                       Icons.arrow_forward,
                       color: AppColors.iconColor,
-                      size: Dimensions.of(context).icon20,
+                      size: Dimensions(context).icon20,
                     ),
                   ),
               ],

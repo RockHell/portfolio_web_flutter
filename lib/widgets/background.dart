@@ -4,7 +4,10 @@ import 'package:my_portfolio/common/app_colors.dart';
 class Background extends StatelessWidget {
   const Background({
     super.key,
+    this.child,
   });
+
+  final Widget? child;
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +25,7 @@ class Background extends StatelessWidget {
           ],
         ),
       ),
+      child: child,
     );
   }
 }

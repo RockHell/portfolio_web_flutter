@@ -7,21 +7,25 @@ import 'package:my_portfolio/widgets/app_text.dart';
 
 class CardVertical extends StatelessWidget {
   const CardVertical({
+    required this.title,
+    required this.description,
     super.key,
     this.imagePath,
     this.vectorPath,
-    required this.title,
-    required this.description,
+    this.backgroundColor = AppColors.cardOuterBackground,
     this.onTap,
     this.margin = EdgeInsets.zero,
+    this.borderRadius,
   });
 
   final String? imagePath;
   final String? vectorPath;
   final String title;
   final String description;
+  final Color backgroundColor;
   final GestureTapCallback? onTap;
   final EdgeInsetsGeometry margin;
+  final BorderRadius? borderRadius;
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +34,7 @@ class CardVertical extends StatelessWidget {
       child: Material(
         color: AppColors.transparent,
         child: InkWell(
-          borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+          borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
           splashColor: AppColors.selectionWhiteBackground,
           highlightColor: AppColors.selectionWhiteBackground,
           hoverColor: AppColors.selectionWhiteBackground,
@@ -38,16 +42,16 @@ class CardVertical extends StatelessWidget {
           child: Container(
             width: double.infinity,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
-              color: AppColors.cardOuterBackground,
+              borderRadius: borderRadius ?? BorderRadius.circular(Dimensions.cardOuterBorderRadius),
+              color: backgroundColor,
             ),
-            padding: EdgeInsets.all(Paddings.of(context).padding_16),
+            padding: EdgeInsets.all(Paddings(context).padding_16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 if (imagePath != null || vectorPath != null)
                   Padding(
-                    padding: EdgeInsets.only(bottom: Paddings.of(context).padding_16),
+                    padding: EdgeInsets.only(bottom: Paddings(context).padding_16),
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(Dimensions.cardInnerBorderRadius),
                       child: AspectRatio(
@@ -98,15 +102,15 @@ class CardVertical extends StatelessWidget {
                 AppText(
                   title,
                   fontWeight: FontWeight.bold,
-                  textSize: Dimensions.of(context).text14,
+                  textSize: Dimensions(context).text14,
                 ),
                 AppText(
                   description,
-                  textSize: Dimensions.of(context).text12,
+                  textSize: Dimensions(context).text12,
                   textColor: AppColors.paragraph,
                   padding: EdgeInsets.only(
-                    top: Paddings.of(context).padding_12,
-                    bottom: Paddings.of(context).padding_12,
+                    top: Paddings(context).padding_12,
+                    bottom: Paddings(context).padding_12,
                   ),
                 ),
                 if (onTap != null)
@@ -115,7 +119,7 @@ class CardVertical extends StatelessWidget {
                     child: Icon(
                       Icons.arrow_forward,
                       color: AppColors.iconColor,
-                      size: Dimensions.of(context).icon20,
+                      size: Dimensions(context).icon20,
                     ),
                   ),
               ],

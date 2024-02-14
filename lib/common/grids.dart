@@ -2,17 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:my_portfolio/utils/screen_size_handler.dart';
 
 class Grids {
+  Grids(this.context);
+
   final BuildContext context;
 
-  Grids._(this.context);
-
-  static Grids of(BuildContext context) => Grids._(context);
-
   // HomePage
-  int get homepageColumns => [1, 1, 2, 2, 3, 4].elementAt(context.device);
+  int get gridHomePage => (context.width <= 900) ? 1 : ((context.width - 900) / 400).ceil() + 1;
 
-  // WidgetsPage
-  int get grid300Px => context.numberOf300Px;
-
-  int get grid400Px => context.numberOf400Px > 4 ? 4 : context.numberOf400Px;
+  static int gridHomeProjects(double currentWidth) =>
+      (currentWidth < 250) ? 1 : ((currentWidth - 250) / 200).ceil() + 1;
 }

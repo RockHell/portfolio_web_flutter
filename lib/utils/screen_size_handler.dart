@@ -4,13 +4,13 @@ extension BuildContextEntension<T> on BuildContext {
   int getScreenSize(double width) {
     if (width < 400) {
       return 0;
-    } else if (width >= 400 && width < 600) {
+    } else if (width < 600) {
       return 1;
-    } else if (width >= 600 && width < 800) {
+    } else if (width < 900) {
       return 2;
-    } else if (width >= 800 && width < 1100) {
+    } else if (width < 1100) {
       return 3;
-    } else if (width >= 1100 && width < 1400) {
+    } else if (width < 1400) {
       return 4;
     } else {
       return 5;
@@ -18,10 +18,6 @@ extension BuildContextEntension<T> on BuildContext {
   }
 
   int get device => getScreenSize(width);
-
-  int get numberOf300Px => width ~/ 300 > 0 ? width ~/ 300 : 1;
-
-  int get numberOf400Px => width ~/ 400 > 0 ? width ~/ 400 : 1;
 
   double get width => MediaQuery.of(this).size.width;
 

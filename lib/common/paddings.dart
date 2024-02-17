@@ -19,4 +19,8 @@ class Paddings {
   double get padding_48 => [36.0, 36.0, 48.0, 48.0, 48.0, 48.0].elementAt(context.device);
 
   double get padding_72 => [54.0, 54.0, 72.0, 72.0, 72.0, 72.0].elementAt(context.device);
+
+  // Page specific paddings
+
+  double get homepageMainPadding => [12.0, 24.0, 36.0, 48.0, 48.0, 48.0].elementAt(context.device);
 }

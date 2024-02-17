@@ -71,7 +71,7 @@ class CardHorizontal extends StatelessWidget {
                               fit: BoxFit.cover,
                             ),
                           Positioned.fill(
-                            child: Container(
+                            child: DecoratedBox(
                               decoration: BoxDecoration(
                                 gradient: LinearGradient(
                                   begin: Alignment.bottomLeft,

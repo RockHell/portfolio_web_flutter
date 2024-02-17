@@ -4,6 +4,7 @@ import 'package:my_portfolio/common/app_colors.dart';
 import 'package:my_portfolio/common/r.dart';
 import 'package:my_portfolio/pages/home_page/home_page.dart';
 
+// TODO Favicon
 class App extends StatelessWidget {
   const App({super.key});
 

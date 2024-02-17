@@ -55,15 +55,15 @@ class CardHorizontalSmall extends StatelessWidget {
                         if (imagePath != null)
                           Image(
                             image: AssetImage(imagePath!),
-                            width: Dimensions(context).cardHorizontalSmallImageSize,
-                            height: Dimensions(context).cardHorizontalSmallImageSize,
+                            width: Dimensions(context).cardHorizontalImageSize,
+                            height: Dimensions(context).cardHorizontalImageSize,
                             fit: BoxFit.cover,
                           ),
                         if (vectorPath != null)
                           SvgPicture.asset(
                             vectorPath!,
-                            width: Dimensions(context).cardHorizontalSmallImageSize,
-                            height: Dimensions(context).cardHorizontalSmallImageSize,
+                            width: Dimensions(context).cardHorizontalImageSize,
+                            height: Dimensions(context).cardHorizontalImageSize,
                             fit: BoxFit.cover,
                           ),
                         Positioned.fill(
@@ -93,20 +93,19 @@ class CardHorizontalSmall extends StatelessWidget {
                   ),
                 Expanded(
                   child: Container(
-                    height: Dimensions(context).cardHorizontalSmallImageSize,
-                    padding: EdgeInsets.only(left: Paddings(context).padding_16),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        AppText(
-                          title,
-                          fontWeight: FontWeight.bold,
-                          textSize: Dimensions(context).text14,
-                          padding: EdgeInsets.only(right: Paddings(context).padding_16),
-                          textOverflow: TextOverflow.ellipsis,
-                        ),
-                      ],
+                    constraints: BoxConstraints(
+                      minHeight: Dimensions(context).cardHorizontalImageSize,
+                    ),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: AppText(
+                        title,
+                        fontWeight: FontWeight.bold,
+                        textSize: Dimensions(context).text14,
+                        padding: EdgeInsets.symmetric(horizontal: Paddings(context).padding_16),
+                        textOverflow: TextOverflow.ellipsis,
+                        maxLines: 1,
+                      ),
                     ),
                   ),
                 ),

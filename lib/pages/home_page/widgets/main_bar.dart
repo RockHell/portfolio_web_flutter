@@ -15,7 +15,7 @@ class MainBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: Paddings(context).padding_48,
+        horizontal: Paddings(context).homepageMainPadding,
         vertical: Paddings(context).padding_12,
       ),
       child: Row(
@@ -33,6 +33,14 @@ class MainBar extends StatelessWidget {
             icon: Icons.dark_mode_outlined,
             // TODO switch translations for darkMode and lightMode
             tooltip: context.tr('darkMode'),
+            onTap: () {
+              // TODO
+            },
+          ),
+          LargeIconButton(
+            icon: Icons.info_outline,
+            // TODO Open info page
+            tooltip: context.tr('info'),
             onTap: () {
               // TODO
             },

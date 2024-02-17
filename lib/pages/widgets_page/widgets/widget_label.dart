@@ -38,7 +38,7 @@ class WidgetLabel extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(
             top: Paddings(context).padding_8,
-            bottom: Paddings(context).padding_72,
+            bottom: Paddings(context).padding_48,
           ),
           child: child,
         ),

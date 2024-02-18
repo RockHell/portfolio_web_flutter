@@ -1,12 +1,13 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:my_portfolio/common/grids.dart';
 import 'package:my_portfolio/common/paddings.dart';
-import 'package:my_portfolio/pages/home_page/widgets/home_page_android.dart';
-import 'package:my_portfolio/pages/home_page/widgets/home_page_design.dart';
-import 'package:my_portfolio/pages/home_page/widgets/home_page_flutter.dart';
-import 'package:my_portfolio/pages/home_page/widgets/home_page_other.dart';
-import 'package:my_portfolio/pages/home_page/widgets/home_page_projects.dart';
+import 'package:my_portfolio/common/vector_paths.dart';
+import 'package:my_portfolio/content/android_content.dart';
+import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal.dart';
+import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal_small.dart';
+import 'package:my_portfolio/pages/home_page/widgets/home_page_card_vertical.dart';
 import 'package:my_portfolio/pages/home_page/widgets/main_bar.dart';
 import 'package:my_portfolio/widgets/background.dart';
 
@@ -37,14 +38,51 @@ class _HomePageState extends State<HomePage> {
                   width: double.infinity,
                   child: StaggeredGrid.count(
                     crossAxisCount: Grids(context).gridHomePage,
-                    mainAxisSpacing: Paddings(context).padding_48,
+                    mainAxisSpacing: Paddings(context).padding_24,
                     crossAxisSpacing: Paddings(context).padding_24,
-                    children: const [
-                      HomePageFlutter(),
-                      HomePageProjects(),
-                      HomePageAndroid(),
-                      HomePageDesign(),
-                      HomePageOther(),
+                    children: [
+                      HomePageCardHorizontal(
+                        title: context.tr('flutter'),
+                        titleVectorPath: VectorPaths.flutter,
+                        // TODO Flutter articles
+                        // TODO Sort by date
+                        articles: AndroidContent().androidArticles,
+                        onTap: () {
+                          // TODO
+                        },
+                      ),
+                      HomePageCardVertical(
+                        title: context.tr('projects'),
+                        // TODO Flutter articles
+                        articles: AndroidContent().androidArticles,
+                        onTap: () {
+                          // TODO
+                        },
+                      ),
+                      HomePageCardHorizontal(
+                        title: context.tr('android'),
+                        titleVectorPath: VectorPaths.android,
+                        articles: AndroidContent().androidArticles,
+                        onTap: () {
+                          // TODO
+                        },
+                      ),
+                      HomePageCardHorizontal(
+                        title: context.tr('design'),
+                        // TODO Design articles
+                        articles: AndroidContent().androidArticles,
+                        onTap: () {
+                          // TODO
+                        },
+                      ),
+                      HomePageCardHorizontalSmall(
+                        title: context.tr('other'),
+                        // TODO Design articles
+                        articles: AndroidContent().androidArticles,
+                        onTap: () {
+                          // TODO
+                        },
+                      ),
                     ],
                   ),
                 ),

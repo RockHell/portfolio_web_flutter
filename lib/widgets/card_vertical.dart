@@ -9,6 +9,7 @@ class CardVertical extends StatelessWidget {
   const CardVertical({
     required this.title,
     required this.description,
+    required this.date,
     super.key,
     this.imagePath,
     this.vectorPath,
@@ -22,6 +23,7 @@ class CardVertical extends StatelessWidget {
   final String? vectorPath;
   final String title;
   final String description;
+  final String date;
   final Color backgroundColor;
   final GestureTapCallback? onTap;
   final EdgeInsetsGeometry margin;
@@ -108,20 +110,40 @@ class CardVertical extends StatelessWidget {
                   description,
                   textSize: Dimensions(context).text12,
                   textColor: AppColors.paragraph,
+                  maxLines: 3,
+                  textOverflow: TextOverflow.ellipsis,
                   padding: EdgeInsets.only(
                     top: Paddings(context).padding_12,
                     bottom: Paddings(context).padding_12,
                   ),
                 ),
-                if (onTap != null)
-                  Align(
-                    alignment: Alignment.bottomRight,
-                    child: Icon(
-                      Icons.arrow_forward,
-                      color: AppColors.iconColor,
-                      size: Dimensions(context).icon20,
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  children: [
+                    Flexible(
+                      child: AppText(
+                        date,
+                        textSize: Dimensions(context).text12,
+                        textColor: AppColors.paragraph,
+                        maxLines: 1,
+                        textOverflow: TextOverflow.ellipsis,
+                        padding: EdgeInsets.only(
+                          right: Paddings(context).padding_12,
+                        ),
+                      ),
                     ),
-                  ),
+                    if (onTap != null)
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: AppColors.iconColor,
+                          size: Dimensions(context).icon20,
+                        ),
+                      ),
+                  ],
+                ),
               ],
             ),
           ),

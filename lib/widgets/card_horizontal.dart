@@ -9,6 +9,7 @@ class CardHorizontal extends StatelessWidget {
   const CardHorizontal({
     required this.title,
     required this.description,
+    required this.date,
     super.key,
     this.backgroundColor = AppColors.cardOuterBackground,
     this.imagePath,
@@ -22,6 +23,7 @@ class CardHorizontal extends StatelessWidget {
   final String? vectorPath;
   final String title;
   final String description;
+  final String date;
   final Color backgroundColor;
   final GestureTapCallback? onTap;
   final EdgeInsetsGeometry margin;
@@ -46,85 +48,112 @@ class CardHorizontal extends StatelessWidget {
               color: backgroundColor,
             ),
             padding: EdgeInsets.all(Paddings(context).padding_16),
-            child: Row(
+            child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                if (imagePath != null || vectorPath != null)
-                  Padding(
-                    padding: EdgeInsets.only(right: Paddings(context).padding_16),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(Dimensions.cardInnerBorderRadius),
-                      child: Stack(
-                        children: [
-                          if (imagePath != null)
-                            Image(
-                              image: AssetImage(imagePath!),
-                              width: Dimensions(context).cardHorizontalImageSize,
-                              height: Dimensions(context).cardHorizontalImageSize,
-                              fit: BoxFit.cover,
-                            ),
-                          if (vectorPath != null)
-                            SvgPicture.asset(
-                              vectorPath!,
-                              width: Dimensions(context).cardHorizontalImageSize,
-                              height: Dimensions(context).cardHorizontalImageSize,
-                              fit: BoxFit.cover,
-                            ),
-                          Positioned.fill(
-                            child: DecoratedBox(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.bottomLeft,
-                                  end: Alignment.topRight,
-                                  colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0)],
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    if (imagePath != null || vectorPath != null)
+                      Padding(
+                        padding: EdgeInsets.only(
+                          right: Paddings(context).padding_16,
+                          bottom: Paddings(context).padding_12,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(Dimensions.cardInnerBorderRadius),
+                          child: Stack(
+                            children: [
+                              if (imagePath != null)
+                                Image(
+                                  image: AssetImage(imagePath!),
+                                  width: Dimensions(context).cardHorizontalImageSize,
+                                  height: Dimensions(context).cardHorizontalImageSize,
+                                  fit: BoxFit.cover,
+                                ),
+                              if (vectorPath != null)
+                                SvgPicture.asset(
+                                  vectorPath!,
+                                  width: Dimensions(context).cardHorizontalImageSize,
+                                  height: Dimensions(context).cardHorizontalImageSize,
+                                  fit: BoxFit.cover,
+                                ),
+                              Positioned.fill(
+                                child: DecoratedBox(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.bottomLeft,
+                                      end: Alignment.topRight,
+                                      colors: [Colors.white.withOpacity(0.1), Colors.white.withOpacity(0)],
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
+                              Positioned.fill(
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                    gradient: LinearGradient(
+                                      begin: Alignment.topRight,
+                                      end: Alignment.bottomLeft,
+                                      colors: [Colors.black.withOpacity(0.1), Colors.black.withOpacity(0)],
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
-                          Positioned.fill(
-                            child: Container(
-                              decoration: BoxDecoration(
-                                gradient: LinearGradient(
-                                  begin: Alignment.topRight,
-                                  end: Alignment.bottomLeft,
-                                  colors: [Colors.black.withOpacity(0.1), Colors.black.withOpacity(0)],
-                                ),
-                              ),
+                        ),
+                      ),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          AppText(
+                            title,
+                            fontWeight: FontWeight.bold,
+                            textSize: Dimensions(context).text14,
+                          ),
+                          AppText(
+                            description,
+                            textSize: Dimensions(context).text12,
+                            textColor: AppColors.paragraph,
+                            maxLines: 3,
+                            textOverflow: TextOverflow.ellipsis,
+                            padding: EdgeInsets.only(
+                              top: Paddings(context).padding_12,
+                              bottom: Paddings(context).padding_12,
                             ),
                           ),
                         ],
                       ),
                     ),
-                  ),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      AppText(
-                        title,
-                        fontWeight: FontWeight.bold,
-                        textSize: Dimensions(context).text14,
-                      ),
-                      AppText(
-                        description,
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Flexible(
+                      child: AppText(
+                        date,
                         textSize: Dimensions(context).text12,
                         textColor: AppColors.paragraph,
+                        maxLines: 1,
+                        textOverflow: TextOverflow.ellipsis,
                         padding: EdgeInsets.only(
-                          top: Paddings(context).padding_12,
-                          bottom: Paddings(context).padding_12,
+                          right: Paddings(context).padding_12,
                         ),
                       ),
-                      if (onTap != null)
-                        Align(
-                          alignment: Alignment.bottomRight,
-                          child: Icon(
-                            Icons.arrow_forward,
-                            color: AppColors.iconColor,
-                            size: Dimensions(context).icon20,
-                          ),
+                    ),
+                    if (onTap != null)
+                      Align(
+                        alignment: Alignment.bottomRight,
+                        child: Icon(
+                          Icons.keyboard_arrow_right,
+                          color: AppColors.iconColor,
+                          size: Dimensions(context).icon20,
                         ),
-                    ],
-                  ),
+                      ),
+                  ],
                 ),
               ],
             ),

@@ -20,7 +20,7 @@ class CardHorizontalSmallCategory {
         WidgetLabel(
           label: label,
           child: CardHorizontalSmall(
-            vectorPath: VectorPaths.svatkyApp,
+            vectorPath: VectorPaths.nameDayApp,
             title: R.dummyTitleLong,
             onTap: () {},
           ),

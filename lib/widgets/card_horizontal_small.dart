@@ -113,7 +113,7 @@ class CardHorizontalSmall extends StatelessWidget {
                   Padding(
                     padding: EdgeInsets.only(right: Paddings(context).padding_16),
                     child: Icon(
-                      Icons.arrow_forward,
+                      Icons.keyboard_arrow_right,
                       color: AppColors.iconColor,
                       size: Dimensions(context).icon20,
                     ),

@@ -17,6 +17,8 @@ class Dimensions {
 
   double get text12 => [10.0, 11.0, 12.0, 12.0, 12.0, 12.0].elementAt(context.device);
 
+  double get text10 => [8.0, 9.0, 10.0, 10.0, 10.0, 10.0].elementAt(context.device);
+
   // Icons
   double get icon24 => [20.0, 22.0, 24.0, 24.0, 24.0, 24.0].elementAt(context.device);
 

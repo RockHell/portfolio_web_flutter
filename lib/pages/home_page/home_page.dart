@@ -5,6 +5,10 @@ import 'package:my_portfolio/common/grids.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/content/android_content.dart';
+import 'package:my_portfolio/content/design_content.dart';
+import 'package:my_portfolio/content/flutter_content.dart';
+import 'package:my_portfolio/content/other_content.dart';
+import 'package:my_portfolio/content/projects_content.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal_small.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_vertical.dart';
@@ -44,17 +48,14 @@ class _HomePageState extends State<HomePage> {
                       HomePageCardHorizontal(
                         title: context.tr('flutter'),
                         titleVectorPath: VectorPaths.flutter,
-                        // TODO Flutter articles
-                        // TODO Sort by date
-                        articles: AndroidContent().androidArticles,
+                        articles: top4FlutterArticles(),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardVertical(
                         title: context.tr('projects'),
-                        // TODO Flutter articles
-                        articles: AndroidContent().androidArticles,
+                        articles: top4ProjectsArticles(),
                         onTap: () {
                           // TODO
                         },
@@ -62,23 +63,21 @@ class _HomePageState extends State<HomePage> {
                       HomePageCardHorizontal(
                         title: context.tr('android'),
                         titleVectorPath: VectorPaths.android,
-                        articles: AndroidContent().androidArticles,
+                        articles: top4AndroidArticles(),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontal(
                         title: context.tr('design'),
-                        // TODO Design articles
-                        articles: AndroidContent().androidArticles,
+                        articles: top4DesignArticles(),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontalSmall(
                         title: context.tr('other'),
-                        // TODO Design articles
-                        articles: AndroidContent().androidArticles,
+                        articles: top4OtherArticles(),
                         onTap: () {
                           // TODO
                         },

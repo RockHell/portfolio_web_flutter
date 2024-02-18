@@ -6,6 +6,7 @@ class Paddings {
 
   final BuildContext context;
 
+  // General paddings
   double get padding_4 => [3.0, 3.0, 4.0, 4.0, 4.0, 4.0].elementAt(context.device);
 
   double get padding_8 => [6.0, 6.0, 8.0, 8.0, 8.0, 8.0].elementAt(context.device);
@@ -21,6 +22,5 @@ class Paddings {
   double get padding_72 => [54.0, 54.0, 72.0, 72.0, 72.0, 72.0].elementAt(context.device);
 
   // Page specific paddings
-
   double get homepageMainPadding => [12.0, 24.0, 36.0, 48.0, 48.0, 48.0].elementAt(context.device);
 }

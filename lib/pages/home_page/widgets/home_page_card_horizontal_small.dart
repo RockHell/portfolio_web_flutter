@@ -38,7 +38,7 @@ class HomePageCardHorizontalSmall extends StatelessWidget {
         ListView.builder(
           shrinkWrap: true,
           physics: const NeverScrollableScrollPhysics(),
-          itemCount: articles.length < 4 ? articles.length : 4,
+          itemCount: articles.length,
           itemBuilder: (context, index) {
             ArticlePreviewModel article = articles[index];
             return CardHorizontalSmall(

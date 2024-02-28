@@ -11,7 +11,7 @@ class CircleImageCategory {
         WidgetLabel(
           label: label,
           child: CircleImage(
-            imagePath: ImagePaths.myBackground,
+            imagePath: ImagePaths.aboutMeBackground,
             onTap: () {},
           ),
         ),

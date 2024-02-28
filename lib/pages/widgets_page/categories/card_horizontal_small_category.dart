@@ -12,7 +12,7 @@ class CardHorizontalSmallCategory {
         WidgetLabel(
           label: label,
           child: CardHorizontalSmall(
-            imagePath: ImagePaths.myBackground,
+            imagePath: ImagePaths.aboutMeBackground,
             title: R.dummyTitle,
             onTap: () {},
           ),

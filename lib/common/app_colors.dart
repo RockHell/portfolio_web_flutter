@@ -22,7 +22,7 @@ class AppColors {
   static const secondary = Color(0xFF707070);
 
   // Cards
-  static const cardOuterBackground = Color(0x40FFFFFF);
+  static const cardOuterBackground = Color(0x70FFFFFF);
 
   // Icons
   static const iconColor = Color(0xFF202020);

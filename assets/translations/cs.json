@@ -8,5 +8,8 @@
   "projects": "Projekty",
   "other": "Ostatní",
   "design": "Design",
-  "info": "Info"
+  "aboutMe": "O mně",
+  "nameDayApp": "Svátky a narozeniny widget",
+  "nameDayAppDescription": "Android widget aplikace pro zobrazování svátků a narozenin na ploše.",
+  "petrskovskyCzDescription": "Osobní web jako Flutter aplikace."
 }

@@ -48,14 +48,14 @@ class _HomePageState extends State<HomePage> {
                       HomePageCardHorizontal(
                         title: context.tr('flutter'),
                         titleVectorPath: VectorPaths.flutter,
-                        articles: top4FlutterArticles(),
+                        articles: top4FlutterArticles(context),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardVertical(
                         title: context.tr('projects'),
-                        articles: top4ProjectsArticles(),
+                        articles: top4ProjectsArticles(context),
                         onTap: () {
                           // TODO
                         },
@@ -63,21 +63,21 @@ class _HomePageState extends State<HomePage> {
                       HomePageCardHorizontal(
                         title: context.tr('android'),
                         titleVectorPath: VectorPaths.android,
-                        articles: top4AndroidArticles(),
+                        articles: top4AndroidArticles(context),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontal(
                         title: context.tr('design'),
-                        articles: top4DesignArticles(),
+                        articles: top4DesignArticles(context),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontalSmall(
                         title: context.tr('other'),
-                        articles: top4OtherArticles(),
+                        articles: top4OtherArticles(context),
                         onTap: () {
                           // TODO
                         },

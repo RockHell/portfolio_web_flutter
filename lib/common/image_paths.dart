@@ -1,4 +1,4 @@
 class ImagePaths {
   // Raster images
-  static const myBackground = 'assets/images/my_background.jpg';
+  static const aboutMeBackground = 'assets/images/about_me_background.jpg';
 }

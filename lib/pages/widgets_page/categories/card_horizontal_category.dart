@@ -12,7 +12,7 @@ class CardHorizontalCategory {
         WidgetLabel(
           label: label,
           child: CardHorizontal(
-            imagePath: ImagePaths.myBackground,
+            imagePath: ImagePaths.aboutMeBackground,
             title: R.dummyTitle,
             description: R.dummyDescription,
             date: R.dummyDate,

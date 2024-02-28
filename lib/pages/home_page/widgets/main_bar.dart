@@ -2,6 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/paddings.dart';
+import 'package:my_portfolio/pages/about_me_page/about_me_page.dart';
 import 'package:my_portfolio/pages/widgets_page/widgets_page.dart';
 import 'package:my_portfolio/utils/app_navigator.dart';
 import 'package:my_portfolio/widgets/large_icon_button.dart';
@@ -38,11 +39,10 @@ class MainBar extends StatelessWidget {
             },
           ),
           LargeIconButton(
-            icon: Icons.info_outline,
-            // TODO Open info page
-            tooltip: context.tr('info'),
+            icon: Icons.person_outline,
+            tooltip: context.tr('aboutMe'),
             onTap: () {
-              // TODO
+              myPush(context, const AboutMePage());
             },
           ),
         ],

@@ -8,5 +8,8 @@
   "projects": "Projects",
   "other": "Other",
   "design": "Design",
-  "info": "Info"
+  "aboutMe": "About me",
+  "nameDayApp": "Name day and birthday widget",
+  "nameDayAppDescription": "Android widget app for displaying name day and birthdays on your home screen.",
+  "petrskovskyCzDescription": "Personal Flutter web application."
 }

@@ -16,7 +16,7 @@ class MainBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.symmetric(
-        horizontal: Paddings(context).homepageMainPadding,
+        horizontal: Paddings(context).mainPadding,
         vertical: Paddings(context).padding_12,
       ),
       child: Row(

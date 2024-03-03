@@ -27,14 +27,21 @@ class AboutMePage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                margin: EdgeInsets.all(Paddings(context).padding_24),
+                margin: EdgeInsets.symmetric(
+                  vertical: Paddings(context).padding_24,
+                  horizontal: Paddings(context).mainPadding - Paddings(context).padding_16,
+                ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Paddings(context).padding_48,
+                padding: EdgeInsets.fromLTRB(
+                  Paddings(context).mainPadding,
+                  0.0,
+                  Paddings(context).mainPadding,
+                  Paddings(context).mainPadding,
                 ),
                 child: Center(
-                  child: DecoratedBox(
+                  child: Container(
+                    width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(Dimensions.cardOuterBorderRadius),
                       color: AppColors.cardOuterBackground,

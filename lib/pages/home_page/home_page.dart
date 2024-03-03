@@ -33,10 +33,10 @@ class _HomePageState extends State<HomePage> {
               const MainBar(),
               Padding(
                 padding: EdgeInsets.fromLTRB(
-                  Paddings(context).homepageMainPadding,
+                  Paddings(context).mainPadding,
                   0.0,
-                  Paddings(context).homepageMainPadding,
-                  Paddings(context).homepageMainPadding,
+                  Paddings(context).mainPadding,
+                  Paddings(context).mainPadding,
                 ),
                 child: SizedBox(
                   width: double.infinity,

@@ -7,42 +7,33 @@ import 'package:my_portfolio/widgets/app_text.dart';
 class WidgetLabel extends StatelessWidget {
   const WidgetLabel({
     required this.label,
-    required this.child,
     super.key,
   });
 
   final String label;
-  final Widget child;
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Icon(
-              Icons.arrow_right,
-              color: AppColors.iconColor,
-              size: Dimensions(context).icon20,
-            ),
-            Flexible(
-              child: AppText(
-                label,
-                textSize: Dimensions(context).text16,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ],
-        ),
-        Padding(
-          padding: EdgeInsets.only(
-            top: Paddings(context).padding_8,
-            bottom: Paddings(context).padding_48,
+    return Padding(
+      padding: EdgeInsets.only(
+        bottom: Paddings(context).padding_12,
+      ),
+      child: Row(
+        children: [
+          Icon(
+            Icons.arrow_right,
+            color: AppColors.iconColor,
+            size: Dimensions(context).icon20,
           ),
-          child: child,
-        ),
-      ],
+          Flexible(
+            child: AppText(
+              label,
+              textSize: Dimensions(context).text18,
+              fontWeight: FontWeight.bold,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -30,31 +30,30 @@ class WidgetsPage extends StatelessWidget {
                 onTap: () {
                   Navigator.of(context).pop();
                 },
-                margin: EdgeInsets.all(Paddings(context).padding_24),
+                margin: EdgeInsets.symmetric(
+                  vertical: Paddings(context).padding_24,
+                  horizontal: Paddings(context).mainPadding - Paddings(context).padding_16,
+                ),
               ),
               Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: Paddings(context).padding_48,
+                padding: EdgeInsets.fromLTRB(
+                  Paddings(context).mainPadding,
+                  0.0,
+                  Paddings(context).mainPadding,
+                  Paddings(context).mainPadding,
                 ),
-                child: Center(
-                  child: Container(
-                    constraints: const BoxConstraints(
-                      maxWidth: 300.0,
-                    ),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ...CardVerticalCategory().widgets,
-                        ...CardHorizontalCategory().widgets,
-                        ...CardHorizontalSmallCategory().widgets,
-                        ...TitleClickableCategory().widgets,
-                        ...CircleImageCategory().widgets,
-                        ...TopBarCategory().widgets,
-                        ...LargeIconButtonCategory().widgets,
-                        ...AppDividerCategory().widgets,
-                      ],
-                    ),
-                  ),
+                child: const Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    CardVerticalCategory(),
+                    CardHorizontalCategory(),
+                    CardHorizontalSmallCategory(),
+                    TitleClickableCategory(),
+                    CircleImageCategory(),
+                    TopBarCategory(),
+                    LargeIconButtonCategory(),
+                    AppDividerCategory(),
+                  ],
                 ),
               ),
             ],

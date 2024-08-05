@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/app_colors.dart';
 import 'package:my_portfolio/common/r.dart';
@@ -16,9 +15,6 @@ class App extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: AppColors.seedColor),
         useMaterial3: true,
       ),
-      localizationsDelegates: context.localizationDelegates,
-      supportedLocales: context.supportedLocales,
-      locale: context.locale,
       home: const HomePage(),
       debugShowCheckedModeBanner: false,
     );

@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/app_colors.dart';
 import 'package:my_portfolio/common/dimensions.dart';
@@ -23,7 +22,7 @@ class AboutMePage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TopBar(
-                title: context.tr('aboutMe'),
+                title: "O mně",
                 onTap: () {
                   Navigator.of(context).pop();
                 },

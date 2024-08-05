@@ -1,6 +1,6 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:intl/intl.dart';
 import 'package:my_portfolio/common/grids.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
@@ -31,7 +31,7 @@ class HomePageCardVertical extends StatelessWidget {
         TitleClickable(
           title: title,
           vectorPath: titleVectorPath,
-          rightText: rightText ?? context.tr('showAll'),
+          rightText: rightText ?? "Zobrazit vše",
           margin: EdgeInsets.only(
             bottom: Paddings(context).padding_8,
           ),

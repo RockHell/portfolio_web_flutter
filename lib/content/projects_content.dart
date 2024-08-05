@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
@@ -11,14 +10,14 @@ List<ArticlePreviewModel> top4ProjectsArticles(BuildContext context) {
 List<ArticlePreviewModel> _getArticles(BuildContext context) => [
       ArticlePreviewModel(
         title: 'petrskovsky.cz',
-        description: context.tr('petrskovskyCzDescription'),
+        description: "Osobní web jako Flutter aplikace.",
         date: DateTime.parse('2024-02-28'),
         // TODO Icon
         vectorPath: VectorPaths.nameDayApp,
       ),
       ArticlePreviewModel(
-        title: context.tr('nameDayApp'),
-        description: context.tr('nameDayAppDescription'),
+        title: "Svátky a narozeniny widget",
+        description: "Android widget aplikace pro zobrazování svátků a narozenin na ploše.",
         date: DateTime.parse('2024-02-28'),
         vectorPath: VectorPaths.nameDayApp,
       ),

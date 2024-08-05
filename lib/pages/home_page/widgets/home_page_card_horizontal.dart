@@ -1,5 +1,5 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:my_portfolio/common/app_colors.dart';
 import 'package:my_portfolio/common/dimensions.dart';
 import 'package:my_portfolio/common/paddings.dart';
@@ -32,7 +32,7 @@ class HomePageCardHorizontal extends StatelessWidget {
         TitleClickable(
           title: title,
           vectorPath: titleVectorPath,
-          rightText: rightText ?? context.tr('showAll'),
+          rightText: rightText ?? "Zobrazit vše",
           margin: EdgeInsets.only(
             bottom: Paddings(context).padding_8,
           ),

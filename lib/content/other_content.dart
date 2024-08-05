@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
@@ -17,7 +16,7 @@ List<ArticlePreviewModel> _getArticles(BuildContext context) => [
         vectorPath: VectorPaths.nameDayApp,
       ),
       ArticlePreviewModel(
-        title: context.tr('projects'),
+        title: "Projekty",
         description: 'Android widget aplikace pro zobrazování svátků a narozenin na ploše.',
         date: DateTime.parse('2024-02-28'),
         vectorPath: VectorPaths.nameDayApp,

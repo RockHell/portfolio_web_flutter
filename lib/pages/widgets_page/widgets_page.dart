@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/pages/widgets_page/categories/app_divider_category.dart';
@@ -26,7 +25,7 @@ class WidgetsPage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               TopBar(
-                title: context.tr('titleWidgets'),
+                title: "Seznam widgetů",
                 onTap: () {
                   Navigator.of(context).pop();
                 },

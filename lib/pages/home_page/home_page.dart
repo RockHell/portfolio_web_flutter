@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:my_portfolio/common/grids.dart';
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
                     crossAxisSpacing: Paddings(context).padding_24,
                     children: [
                       HomePageCardHorizontal(
-                        title: context.tr('flutter'),
+                        title: "Flutter",
                         titleVectorPath: VectorPaths.flutter,
                         articles: top4FlutterArticles(context),
                         onTap: () {
@@ -54,14 +53,14 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                       HomePageCardVertical(
-                        title: context.tr('projects'),
+                        title: "Projekty",
                         articles: top4ProjectsArticles(context),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontal(
-                        title: context.tr('android'),
+                        title: "Android",
                         titleVectorPath: VectorPaths.android,
                         articles: top4AndroidArticles(context),
                         onTap: () {
@@ -69,14 +68,14 @@ class _HomePageState extends State<HomePage> {
                         },
                       ),
                       HomePageCardHorizontal(
-                        title: context.tr('design'),
+                        title: "Design",
                         articles: top4DesignArticles(context),
                         onTap: () {
                           // TODO
                         },
                       ),
                       HomePageCardHorizontalSmall(
-                        title: context.tr('other'),
+                        title: "Ostatní",
                         articles: top4OtherArticles(context),
                         onTap: () {
                           // TODO

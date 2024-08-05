@@ -1,4 +1,3 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/paddings.dart';
@@ -25,7 +24,7 @@ class MainBar extends StatelessWidget {
           if (kDebugMode)
             LargeIconButton(
               icon: Icons.design_services_outlined,
-              tooltip: context.tr('titleWidgets'),
+              tooltip: "Seznam widgetů",
               onTap: () {
                 myPush(context, const WidgetsPage());
               },
@@ -33,14 +32,14 @@ class MainBar extends StatelessWidget {
           LargeIconButton(
             icon: Icons.dark_mode_outlined,
             // TODO switch translations for darkMode and lightMode
-            tooltip: context.tr('darkMode'),
+            tooltip: "Tmavý režim",
             onTap: () {
               // TODO
             },
           ),
           LargeIconButton(
             icon: Icons.person_outline,
-            tooltip: context.tr('aboutMe'),
+            tooltip: "O mně",
             onTap: () {
               myPush(context, const AboutMePage());
             },

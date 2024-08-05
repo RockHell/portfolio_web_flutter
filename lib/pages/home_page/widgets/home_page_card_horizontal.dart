@@ -4,6 +4,7 @@ import 'package:my_portfolio/common/app_colors.dart';
 import 'package:my_portfolio/common/dimensions.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
+import 'package:my_portfolio/utils/app_navigator.dart';
 import 'package:my_portfolio/widgets/app_divider.dart';
 import 'package:my_portfolio/widgets/card_horizontal.dart';
 import 'package:my_portfolio/widgets/title_clickable.dart';
@@ -83,7 +84,7 @@ class HomePageCardHorizontal extends StatelessWidget {
                           : Radius.zero,
                     ),
                     onTap: () {
-                      // TODO
+                      myPush(context, article.article);
                     },
                   ),
                 ],

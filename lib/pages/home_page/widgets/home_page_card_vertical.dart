@@ -4,6 +4,7 @@ import 'package:intl/intl.dart';
 import 'package:my_portfolio/common/grids.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
+import 'package:my_portfolio/utils/app_navigator.dart';
 import 'package:my_portfolio/widgets/card_vertical.dart';
 import 'package:my_portfolio/widgets/title_clickable.dart';
 
@@ -51,7 +52,7 @@ class HomePageCardVertical extends StatelessWidget {
                   description: article.description,
                   date: DateFormat('dd.M.yyyy').format(article.date),
                   onTap: () {
-                    // TODO
+                    myPush(context, article.article);
                   },
                 );
               }).toList(),

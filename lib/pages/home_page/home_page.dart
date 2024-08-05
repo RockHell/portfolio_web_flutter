@@ -8,10 +8,12 @@ import 'package:my_portfolio/content/design_content.dart';
 import 'package:my_portfolio/content/flutter_content.dart';
 import 'package:my_portfolio/content/other_content.dart';
 import 'package:my_portfolio/content/projects_content.dart';
+import 'package:my_portfolio/pages/all_grid/all_grid_page.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_horizontal_small.dart';
 import 'package:my_portfolio/pages/home_page/widgets/home_page_card_vertical.dart';
 import 'package:my_portfolio/pages/home_page/widgets/main_bar.dart';
+import 'package:my_portfolio/utils/app_navigator.dart';
 import 'package:my_portfolio/widgets/background.dart';
 
 class HomePage extends StatefulWidget {
@@ -49,14 +51,26 @@ class _HomePageState extends State<HomePage> {
                         titleVectorPath: VectorPaths.flutter,
                         articles: top4FlutterArticles(context),
                         onTap: () {
-                          // TODO
+                          myPush(
+                            context,
+                            AllGridPage(
+                              articles: getFlutterArticles(context),
+                              title: "Flutter",
+                            ),
+                          );
                         },
                       ),
                       HomePageCardVertical(
                         title: "Projekty",
                         articles: top4ProjectsArticles(context),
                         onTap: () {
-                          // TODO
+                          myPush(
+                            context,
+                            AllGridPage(
+                              articles: getProjectsArticles(context),
+                              title: "Projekty",
+                            ),
+                          );
                         },
                       ),
                       HomePageCardHorizontal(
@@ -64,21 +78,39 @@ class _HomePageState extends State<HomePage> {
                         titleVectorPath: VectorPaths.android,
                         articles: top4AndroidArticles(context),
                         onTap: () {
-                          // TODO
+                          myPush(
+                            context,
+                            AllGridPage(
+                              articles: getAndroidArticles(context),
+                              title: "Android",
+                            ),
+                          );
                         },
                       ),
                       HomePageCardHorizontal(
                         title: "Design",
                         articles: top4DesignArticles(context),
                         onTap: () {
-                          // TODO
+                          myPush(
+                            context,
+                            AllGridPage(
+                              articles: getDesignArticles(context),
+                              title: "Design",
+                            ),
+                          );
                         },
                       ),
                       HomePageCardHorizontalSmall(
                         title: "Ostatní",
                         articles: top4OtherArticles(context),
                         onTap: () {
-                          // TODO
+                          myPush(
+                            context,
+                            AllGridPage(
+                              articles: getOtherArticles(context),
+                              title: "Ostatní",
+                            ),
+                          );
                         },
                       ),
                     ],

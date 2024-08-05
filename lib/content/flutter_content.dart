@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:my_portfolio/common/vector_paths.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
 
 List<ArticlePreviewModel> top4FlutterArticles(BuildContext context) {
-  List<ArticlePreviewModel> sorted = _getArticles(context).toList()..sort((a, b) => b.date.compareTo(a.date));
+  List<ArticlePreviewModel> sorted = getFlutterArticles(context).toList()..sort((a, b) => b.date.compareTo(a.date));
   return sorted.take(4).toList();
 }
 
-List<ArticlePreviewModel> _getArticles(BuildContext context) => [
+List<ArticlePreviewModel> getFlutterArticles(BuildContext context) => [
+      /*
       ArticlePreviewModel(
         title: 'Flutter',
         description:
@@ -21,4 +21,5 @@ List<ArticlePreviewModel> _getArticles(BuildContext context) => [
         date: DateTime.parse('2024-02-28'),
         vectorPath: VectorPaths.nameDayApp,
       ),
+*/
     ];

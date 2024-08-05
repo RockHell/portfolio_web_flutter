@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_portfolio/common/paddings.dart';
 import 'package:my_portfolio/models/article_preview_model.dart';
+import 'package:my_portfolio/utils/app_navigator.dart';
 import 'package:my_portfolio/widgets/card_horizontal_small.dart';
 import 'package:my_portfolio/widgets/title_clickable.dart';
 
@@ -45,7 +46,7 @@ class HomePageCardHorizontalSmall extends StatelessWidget {
               vectorPath: article.vectorPath,
               title: article.title,
               onTap: () {
-                // TODO
+                myPush(context, article.article);
               },
               margin: index < articles.length -1 ? EdgeInsets.only(
                 bottom: Paddings(context).padding_16,

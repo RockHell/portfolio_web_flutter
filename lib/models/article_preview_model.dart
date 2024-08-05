@@ -5,6 +5,7 @@ class ArticlePreviewModel {
     required this.title,
     required this.description,
     required this.date,
+    required this.article,
     this.content,
     this.imagePath,
     this.vectorPath,
@@ -13,6 +14,7 @@ class ArticlePreviewModel {
   final String? imagePath;
   final String? vectorPath;
   final String title;
+  final Widget article;
 
   /// [description] short text to describe the article
   final String description;
@@ -23,6 +25,7 @@ class ArticlePreviewModel {
     String? imagePath,
     String? vectorPath,
     String? title,
+    Widget? article,
     String? description,
     DateTime? date,
     List<Widget>? content,
@@ -31,6 +34,7 @@ class ArticlePreviewModel {
       imagePath: imagePath ?? this.imagePath,
       vectorPath: vectorPath ?? this.vectorPath,
       title: title ?? this.title,
+      article: article ?? this.article,
       description: description ?? this.description,
       date: date ?? this.date,
       content: content ?? this.content,

@@ -29,6 +29,8 @@ class MainBar extends StatelessWidget {
                 myPush(context, const WidgetsPage());
               },
             ),
+          /*
+          // TODO
           LargeIconButton(
             icon: Icons.dark_mode_outlined,
             // TODO switch translations for darkMode and lightMode
@@ -44,6 +46,7 @@ class MainBar extends StatelessWidget {
               myPush(context, const AboutMePage());
             },
           ),
+           */
         ],
       ),
     );
